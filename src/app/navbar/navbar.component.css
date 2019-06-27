@@ -1,0 +1,18 @@
+.navbar{
+    padding: .0rem 1rem !important;
+}
+.navheight{
+    height: 40px;
+}
+.ddmenu{
+    left: -100px;
+}
+img{
+    width: 100px;
+}
+.banner{
+    background: url('../../assets/images/rebound-slider-2-bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
