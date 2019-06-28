@@ -8,6 +8,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OrderComponent } from './order/order.component';
 import { ProductsService } from './products.service';
 import { LoginComponent } from './login/login.component';
+import { AppRountingModule } from './app-rounting.module';
+import { PageNotFoundErrorComponent } from './page-not-found-error/page-not-found-error.component';
+
 
 
 @NgModule({
@@ -15,12 +18,14 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     NavbarComponent,
     OrderComponent,
-    LoginComponent
+    LoginComponent,
+    PageNotFoundErrorComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRountingModule,
   ],
   providers: [
     ProductsService

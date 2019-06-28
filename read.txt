@@ -1,0 +1,2 @@
+after creating routing module components are created using cli using this command
+    ng g c new-component --module <modulename(like app)>
