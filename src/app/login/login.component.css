@@ -1,0 +1,32 @@
+.loginBackground{
+    background: url('../../assets/images/loginBg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+.loginBox{
+    background: linear-gradient(45deg, black, transparent);;
+    height: 480px;
+    width: 350px;
+    margin: 70px 10px 75px 10px; 
+    padding: 20px;
+    float: right;
+    
+}
+.loginBox>.iconPos{
+    position: relative;
+    top: -65px
+}
+.loginBox>.loginForm{
+    margin-top: -10px;
+}
+.logo{
+    margin-top: 220px;
+    text-align: center;
+}
+.easySolLogo{
+    margin: 10px;
+    background: transparent;
+    width: 140px;
+
+}
