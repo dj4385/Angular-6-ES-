@@ -10,6 +10,7 @@ import { ProductsService } from './products.service';
 import { LoginComponent } from './login/login.component';
 import { AppRountingModule } from './app-rounting.module';
 import { PageNotFoundErrorComponent } from './page-not-found-error/page-not-found-error.component';
+import { CustomerComponent } from './customer/customer.component';
 
 
 
@@ -19,7 +20,8 @@ import { PageNotFoundErrorComponent } from './page-not-found-error/page-not-foun
     NavbarComponent,
     OrderComponent,
     LoginComponent,
-    PageNotFoundErrorComponent
+    PageNotFoundErrorComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
