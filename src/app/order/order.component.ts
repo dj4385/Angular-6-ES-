@@ -9,7 +9,17 @@ import { ProductsService } from '../products.service';
 export class OrderComponent implements OnInit {
 
   productArr:any = []
-
+  order = {
+    itemName: "",
+    qty:"",
+    balQty:"",
+    pack:"",
+    scheme:"",
+    mrp:"",
+    rate:""
+  }
+  isClicked = false;
+  isReadOnly = true;
   constructor(
     private _prodService: ProductsService
   ) { }
@@ -28,5 +38,29 @@ export class OrderComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+
+  createOrder(){
+    console.log(this.order);
+  }
+  reset(){
+    this.order = {
+      itemName: "",
+      qty:"",
+      balQty:"",
+      pack:"",
+      scheme:"",
+      mrp:"",
+      rate:""
+    }
+  }
+  editRow(){
+    this.isClicked = true
+    this.isReadOnly = false;
+
+  }
+  cancelEdit(){
+    this.isClicked = false;
+    this.isReadOnly = true;
   }
 }
