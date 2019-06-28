@@ -30,3 +30,6 @@
     width: 140px;
 
 }
+button:disabled{
+    cursor: not-allowed;
+}
