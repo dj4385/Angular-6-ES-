@@ -1,2 +1,19 @@
 after creating routing module components are created using cli using this command
     ng g c new-component --module <modulename(like app)>
+
+
+How to deploy angular 6 app on IIS server...
+Step1: Create the build of your project by using this command:-
+        ng build --prod --base-href /<anyNameyouwantforyourproject>/ 
+            note:- base-href is optional
+
+Step 2: Create a folder with any name where is your iis server installed and then paste the build files in the folder you are created..
+Step 3: Go to your IIS server, right click on the Default websites => click on add application =>
+        a) then give the base href name in the Alias 
+        b) Select the physical path of your application which is the path of the folder where IIS Server is installed
+        c) then go to your application  in the IIS server right click on it and go to manage option then click on browse.
+    
+
+Step 4(otpional): If your application is not live then go to your server => next goto the IIS section and double click on authentication. Select ASP.NET Impersonation and select 'Disable' at the top of the right pane.  
+
+Then your application will be live. Thankyou
