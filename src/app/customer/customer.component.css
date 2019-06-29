@@ -1,3 +1,16 @@
 .mtop{
     margin-top: 50px;
 }
+.searchBar{
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    background: #dfe6e9;
+    box-shadow: 2px 4px #888888;
+}
+label{
+    margin-top: 5px;
+    float: right;
+}
+.table td, .table th{
+    padding: 0.40rem;
+}
