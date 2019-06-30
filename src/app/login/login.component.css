@@ -1,17 +1,16 @@
-.loginBackground{
+/* .loginBackground{
     background: url('../../assets/images/loginBg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; 
-}
+} */
 .loginBox{
     background: linear-gradient(45deg, black, transparent);;
-    height: 480px;
-    width: 350px;
+    height: 500px;
+    width: 400px;
     margin: 70px 10px 75px 10px; 
     padding: 20px;
-    float: right;
-    
+    align-content: center
 }
 .loginBox>.iconPos{
     position: relative;
@@ -20,15 +19,11 @@
 .loginBox>.loginForm{
     margin-top: -10px;
 }
-.logo{
-    margin-top: 220px;
-    text-align: center;
-}
 .easySolLogo{
     margin: 10px;
     background: transparent;
-    width: 140px;
-
+    position: relative;
+    top: -40px;
 }
 button:disabled{
     cursor: not-allowed;
