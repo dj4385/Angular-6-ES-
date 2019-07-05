@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://localhost:52765/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	EasySol
+</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="icon" href="http://localhost:52765/Images/EIconSH.ICO"><meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="./EasySol_files/jquery.min.js.download"></script>
+    <!-- jQuery library -->
+    <script src="./EasySol_files/jquery.min.js(1).download"></script>
+    <link href="./EasySol_files/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="./EasySol_files/jquery.dataTables.min.js.download"></script>
+    <script src="./EasySol_files/dataTables.bootstrap.min.js.download"></script>    
+    <link href="./EasySol_files/bootstrap.min.css" rel="stylesheet"><link href="./EasySol_files/bootstrap.css" rel="stylesheet"><link href="./EasySol_files/font-awesome.min.css" rel="stylesheet"><link href="./EasySol_files/font-awesome.css" rel="stylesheet"><link href="./EasySol_files/ionicons.min.css" rel="stylesheet"><link href="./EasySol_files/slick.css" rel="stylesheet"><link href="./EasySol_files/style.min.css" rel="stylesheet"><link href="./EasySol_files/style.css" rel="stylesheet"><link href="./EasySol_files/colors.css" rel="stylesheet"><link href="./EasySol_files/myStyle.css" rel="stylesheet">    
+    <script type="text/javascript">
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+    </script>
+    
+    <title>Customer Master</title>    
+    <style type="text/css">
+        .table > tbody > tr > td {
+            padding: 6px;
+        }
+        .dataTables_filter {
+                 display: none;
+            }
+        .pagination {
+            margin: 0px 0;
+        }
+        .dataTables_paginate .last{display:none;}
+    </style>
+</head>
+<body id="ctl00_mainbody" class="color-blue layout-top-nav" style="height: auto;">
+    <div class="wrapper" style="height: auto;">
+        <form name="aspnetForm" method="post" action="http://localhost:52765/" id="aspnetForm">
+<div>
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTE2NzYxNzc2Mw8WAh4KbFRhYmxlTmFtZQUKWzU5MTFfQWNtXRYCZg9kFgICBA9kFgQCAQ9kFggCAQ8PFgIeBFRleHQFF0QuQy4gQUdFTkNJRVMgUFZULiBMVEQuZGQCBQ8PFgIfAQUOV2VsY29tZSBTSEFLVElkZAIHDw8WAh8BBQ5XZWxjb21lIFNIQUtUSWRkAg0PZBYEAgEPFgIeB1Zpc2libGVoZAICDzwrABEDAA8WBB4LXyFEYXRhQm91bmRnHgtfIUl0ZW1Db3VudAIDZAEQFgAWABYADBQrAAAWAmYPZBYKZg8PFgIeDFRhYmxlU2VjdGlvbgsqKVN5c3RlbS5XZWIuVUkuV2ViQ29udHJvbHMuVGFibGVSb3dTZWN0aW9uAGRkAgEPZBYKZg9kFgICAQ8PFgIeD0NvbW1hbmRBcmd1bWVudAUBMGRkAgEPZBYEAgEPDxYCHwEFCEExMTAwMDAxZGQCAw8PFgIfAQUEMjYyNWRkAgIPZBYCAgEPDxYCHwEFB0RIRUVSQUpkZAIDD2QWAgIBDw8WAh8BZWRkAgQPZBYCAgEPDxYCHwFlZGQCAg9kFgpmD2QWAgIBDw8WAh8GBQExZGQCAQ9kFgQCAQ8PFgIfAQUIQTEyMDAwMDFkZAIDDw8WAh8BBQQyNjI2ZGQCAg9kFgICAQ8PFgIfAQUKREhFRVJBSiAxMmRkAgMPZBYCAgEPDxYCHwFlZGQCBA9kFgICAQ8PFgIfAWVkZAIDD2QWCmYPZBYCAgEPDxYCHwYFATJkZAIBD2QWBAIBDw8WAh8BBQNBSE1kZAIDDw8WAh8BBQQxNzM4ZGQCAg9kFgICAQ8PFgIfAQUmTUVEU01BUlQgTE9HSVNUSUNTIFBSSVZBVEUgTElNSVRFRC1BSE1kZAIDD2QWAgIBDw8WAh8BZWRkAgQPZBYCAgEPDxYCHwEFUDEwNy8xLTImMTA4LzMsU0hJViBTSEFLVEkgSU5ELEVTVEFURSxOQU5BIENISU9EQSBSRCwsTk9CQUxOQUdBUixBSE1FREFCQUQtMzgyMzQwZGQCBA8PFgIfAmhkZAIDDxYCHwEFGkNvcHlyaWdodCAmY29weTsgMjAxOS0yMDE5ZBgBBSRjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGd2Q3VzdG9tZXIPPCsADAEIAgFkqSCm5RC7rbfn6vp0k59qx1ipns05TaL5zW5+1LcmDNQ=">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./EasySol_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./EasySol_files/WebResource(1).axd" type="text/javascript"></script>                       
+            <header class="main-header">
+                <div class="container-fluid bg-purple" style="background-image:url(&#39;Images/TopBackground.png&#39;);background-size:cover;">                    
+                    <div class="col-lg-12 text-center ">
+                        <span id="ctl00_lblSupplierHead" class="text-bigger text-bold text-top-head">D.C. AGENCIES PVT. LTD.</span>
+                    </div>
+                </div>
+                <nav class="navbar navbar-static-top bg-light-blue">
+                    <div class="container-fluid ">
+                        <div class="navbar-header ">
+                            <a>
+                                <img src="./EasySol_files/logoeasysol.png" class="header-logo">
+                            </a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left hidden" id="navbar-collapse">
+                            <ul id="ctl00_navbarheader" class="nav navbar-nav">
+                                <li class="active" id="orderentry">
+                                    <a id="ctl00_btn_Order" media="all" href="javascript:__doPostBack(&#39;ctl00$btn_Order&#39;,&#39;&#39;)">Home</a>
+                                </li>                                                                
+                            </ul>                            
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                        <div class="navbar-custom-menu">
+                            <ul class="nav navbar-nav">
+                                <!-- User Account Menu -->
+                                <li class="dropdown user user-menu">
+                                    <!-- Menu Toggle Button -->
+                                    <a href="http://localhost:52765/#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <!-- The user image in the navbar-->
+                                        <img src="./EasySol_files/avatar.png" class="user-image" alt="User Image">
+                                        <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                        <span class="hidden-xs">
+                                            <span id="ctl00_lbluser" class="control-label">Welcome SHAKTI</span>                                            
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <!-- The user image in the menu -->
+                                        <li class="user-header">
+                                            <img src="./EasySol_files/avatar.png" class="img-circle" alt="User Image">
+                                            <p>
+                                                <span id="ctl00_lblSupplier" class="text-white text-bold">Welcome SHAKTI</span>                                                
+                                            </p>
+                                        </li>
+                                        <!-- Menu Footer-->
+                                        <li class="user-footer bg-gray">
+                                            <div class="pull-left">
+                                                <a id="ctl00_btn_Home" class="btn btn-primary btn-flat" usesubmitbehavior="false" href="javascript:__doPostBack(&#39;ctl00$btn_Home&#39;,&#39;&#39;)">Home</a> 
+                                            </div>
+                                            <div class="pull-right">
+                                                <a id="ctl00_btn_logout" class="btn btn-danger btn-flat" usesubmitbehavior="false" href="javascript:__doPostBack(&#39;ctl00$btn_logout&#39;,&#39;&#39;)">Sign out</a> 
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-custom-menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            
+    <div class="box-body">
+        <div class="container-fluid pt5 search-header border-ridge">
+            <div class="row mb5">
+                <div class="col-lg-6  col-lg-offset-3 col-md-8 col-md-offset-2   col-sm-8 col-sm-offset-2 col-xs-12">
+                    <div id="ctl00_ContentPlaceHolder1_search_panel" style="width:100%;">
+	
+                        <label for="from" class="control-label col-sm-4 col-md-4 col-lg-3 pr0 pl0 mt5">Search Customer :</label>
+                        <div class="col-sm-8 col-md-8 col-lg-9 pl0 pr0">
+                            <input name="ctl00$ContentPlaceHolder1$textSearch" type="text" id="ctl00_ContentPlaceHolder1_textSearch" class="form-control" placeholder="Enter Customer Name" autocomplete="off">
+                        </div>
+                    
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid pl5 pr5">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    
+                    <div class="panel">
+                        <div class="panel-body table-responsive">                            
+                                <div>
+	<div id="ctl00_ContentPlaceHolder1_gvCustomer_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-6"><div class="dataTables_length" id="ctl00_ContentPlaceHolder1_gvCustomer_length"><label>Show <select name="ctl00_ContentPlaceHolder1_gvCustomer_length" aria-controls="ctl00_ContentPlaceHolder1_gvCustomer" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> Records</label></div></div><div class="col-sm-6"><div id="ctl00_ContentPlaceHolder1_gvCustomer_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="ctl00_ContentPlaceHolder1_gvCustomer"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="Grid_table table table-bordered dataTable no-footer" cellspacing="0" rules="all" border="1" id="ctl00_ContentPlaceHolder1_gvCustomer" style="width: 100%; border-collapse: collapse;" role="grid" aria-describedby="ctl00_ContentPlaceHolder1_gvCustomer_info">
+		<thead>
+			<tr role="row"><th class="text-center sorting_disabled" scope="col" rowspan="1" colspan="1" aria-label="View" style="width: 87.0208px;">View</th><th class="text-center sorting" scope="col" style="width: 100.021px;" tabindex="0" aria-controls="ctl00_ContentPlaceHolder1_gvCustomer" rowspan="1" colspan="1" aria-label="Code: activate to sort column ascending">Code</th><th class="text-center sorting_asc" scope="col" style="width: 260.021px;" tabindex="0" aria-controls="ctl00_ContentPlaceHolder1_gvCustomer" rowspan="1" colspan="1" aria-label="Customer Name: activate to sort column descending" aria-sort="ascending">Customer Name</th><th class="text-center sorting_disabled" scope="col" style="width: 207.021px;" rowspan="1" colspan="1" aria-label="Email Id.">Email Id.</th><th class="text-center sorting_disabled" scope="col" rowspan="1" colspan="1" aria-label="Customer Address" style="width: 382.021px;">Customer Address</th></tr>
+		</thead><tbody>
+			
+		<tr role="row" class="odd">
+				<td class="text-center" style="width:80px;">
+                                                <a id="ctl00_ContentPlaceHolder1_gvCustomer_ctl02_lnkDetails" class="btn-link" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvCustomer$ctl02$lnkDetails&#39;,&#39;&#39;)">Select</a>
+                                            </td><td class="text-center">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl02_lblAlterCode">A1100001</span>
+                                                
+                                            </td><td class="text-left sorting_1">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl02_lblName">DHEERAJ</span>
+                                            </td><td class="text-left">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl02_lblEmail"></span>
+                                            </td><td class="text-left">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl02_lblAddress"></span>
+                                            </td>
+			</tr><tr role="row" class="even">
+				<td class="text-center" style="width:80px;">
+                                                <a id="ctl00_ContentPlaceHolder1_gvCustomer_ctl03_lnkDetails" class="btn-link" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvCustomer$ctl03$lnkDetails&#39;,&#39;&#39;)">Select</a>
+                                            </td><td class="text-center">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl03_lblAlterCode">A1200001</span>
+                                                
+                                            </td><td class="text-left sorting_1">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl03_lblName">DHEERAJ 12</span>
+                                            </td><td class="text-left">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl03_lblEmail"></span>
+                                            </td><td class="text-left">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl03_lblAddress"></span>
+                                            </td>
+			</tr><tr role="row" class="odd">
+				<td class="text-center" style="width:80px;">
+                                                <a id="ctl00_ContentPlaceHolder1_gvCustomer_ctl04_lnkDetails" class="btn-link" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$gvCustomer$ctl04$lnkDetails&#39;,&#39;&#39;)">Select</a>
+                                            </td><td class="text-center">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl04_lblAlterCode">AHM</span>
+                                                
+                                            </td><td class="text-left sorting_1">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl04_lblName">MEDSMART LOGISTICS PRIVATE LIMITED-AHM</span>
+                                            </td><td class="text-left">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl04_lblEmail"></span>
+                                            </td><td class="text-left">
+                                                <span id="ctl00_ContentPlaceHolder1_gvCustomer_ctl04_lblAddress">107/1-2&amp;108/3,SHIV SHAKTI IND,ESTATE,NANA CHIODA RD,,NOBALNAGAR,AHMEDABAD-382340</span>
+                                            </td>
+			</tr></tbody>
+	</table></div></div><div class="row"><div class="col-sm-5"><div class="dataTables_info" id="ctl00_ContentPlaceHolder1_gvCustomer_info" role="status" aria-live="polite">Showing 1 to 3 of 3 Records</div></div><div class="col-sm-7"><div class="dataTables_paginate paging_simple_numbers" id="ctl00_ContentPlaceHolder1_gvCustomer_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="ctl00_ContentPlaceHolder1_gvCustomer_previous"><a href="http://localhost:52765/#" aria-controls="ctl00_ContentPlaceHolder1_gvCustomer" data-dt-idx="0" tabindex="0">&lt;&lt;</a></li><li class="paginate_button active"><a href="http://localhost:52765/#" aria-controls="ctl00_ContentPlaceHolder1_gvCustomer" data-dt-idx="1" tabindex="0">1</a></li><li class="paginate_button next disabled" id="ctl00_ContentPlaceHolder1_gvCustomer_next"><a href="http://localhost:52765/#" aria-controls="ctl00_ContentPlaceHolder1_gvCustomer" data-dt-idx="2" tabindex="0">&gt;&gt;</a></li></ul></div></div></div></div>
+</div>
+                                <span id="ctl00_ContentPlaceHolder1_lbl_message" class="grid_msg text-primary">No Record Found</span>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#navbar-collapse").addClass("hidden");
+            $('#ctl00_ContentPlaceHolder1_gvCustomer').DataTable({
+                "sPaginationType": "simple_numbers",
+                 "oLanguage": {
+                     "sLengthMenu": "Show _MENU_ Records",
+                     "oPaginate": {                         
+                         "sPrevious": "<<", // This is the link to the previous page
+                         "sNext": ">>", // This is the link to the next page                        
+                     }
+                 },
+                 "pageLength": 25,
+                 "order": [[2, "asc"]],
+                 'aoColumnDefs': [{
+                     'bSortable': false,
+                     'aTargets': [0, 3, 4],
+                 }]
+            });
+            $(".first.paginate_button, .last.paginate_button").hide();
+         });
+
+         $(document).ready(function () {
+             var dataTable = $("#ctl00_ContentPlaceHolder1_gvCustomer").dataTable();
+             $("#ctl00_ContentPlaceHolder1_textSearch").keyup(function () {
+                 dataTable.fnFilter(this.value);
+             });
+         });
+
+    </script>
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $("#navbar-collapse").addClass("hidden");
+         });
+    </script>
+            
+        
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAgWUcyWP60Lgatx4iCLQO3dmItY7jVAU4UVUyPxZSqdsVRmB6vrJC1tWwcvLe6aXe0+fu6HiGplq9zdj1gXS30xca14xosGZoMcP2FLxNsfT7cJZkmvXWmVjAxB8iwR5tQ6/hgos875KDfXB/GkQY3hQlRowes+YPCyEbgYROhw5PZcSnLF9iDAS2J3MYfLHRJBHuFhdqO1TGkrLCPeOn1p">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+WebForm_AutoFocus('ctl00_ContentPlaceHolder1_textSearch');//]]>
+</script>
+</form>
+        <a id="back-to-top" href="http://localhost:52765/#" class="btn btn-primary btn-lg back-to-top" role="button" title="" data-toggle="tooltip" data-placement="left" data-original-title="Click to return on the top page" aria-describedby="tooltip827968"><span class="glyphicon glyphicon-chevron-up"></span></a><div class="tooltip fade left in" role="tooltip" id="tooltip827968" style="top: -0.010416px; left: -187.017px; display: block;"><div class="tooltip-arrow" style="top: 0%;"></div><div class="tooltip-inner">Click to return on the top page</div></div>
+        <footer class="main-footer pt5 pb5">
+            <div class="container text-center">
+                <strong>Copyright © 2019-2019 <a href="http://easysol.in/" target="_blank">EasySol</a>.</strong> All rights reserved.
+            </div>
+            <!-- /.container -->
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+
+    <script type="text/javascript" lang="javascript">
+        function alphanumeric(e) {
+            var k;
+            document.all ? k = e.keycode : k = e.which;
+            if ((k > 47 && k < 58) || (k > 64 && k < 91) || (k > 96 && k < 123) || k == 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>    
+    <script src="./EasySol_files/bootstrap.min.js.download"></script>
+    <script src="./EasySol_files/bootstrap.js.download"></script>
+    <script src="./EasySol_files/app.min.js.download"></script>
+    <script src="./EasySol_files/app.js.download"></script>
+    <script src="./EasySol_files/custom.js.download"></script>
+    <script src="./EasySol_files/slick.min.js.download"></script>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+            // scroll body to 0px on click
+            $('#back-to-top').click(function () {
+                $('#back-to-top').tooltip('hide');
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+
+            $('#back-to-top').tooltip('show');
+
+        });
+
+    </script>
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Chrome","requestId":"e27208bda1d04db798dabaf2e0f5bda7"}
+</script>
+<script type="text/javascript" src="./EasySol_files/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+
+
+</body></html>

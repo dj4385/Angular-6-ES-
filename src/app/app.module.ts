@@ -11,6 +11,8 @@ import { AppRountingModule } from './app-rounting.module';
 import { PageNotFoundErrorComponent } from './page-not-found-error/page-not-found-error.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ClientServiceService } from './customer/client-service.service';
+import { ApiUrlsService } from './api/api-urls.service';
 
 
 
@@ -30,7 +32,9 @@ import { CookieService } from 'ngx-cookie-service';
   ],
   providers: [
     ProductsService,
-    CookieService
+    CookieService,
+    ClientServiceService,
+    ApiUrlsService
   ],
   bootstrap: [AppComponent]
 })
