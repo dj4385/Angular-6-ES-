@@ -23,3 +23,15 @@ Use cookies in the angular 6...
 To install the coookes npm:- npm i ngx-cookie-service --save
 visit the link for how to use cookes:
     https://www.npmjs.com/package/ngx-cookie-service
+
+================================================================
+How to get the element of html to ts file..
+
+In HTML file
+    <input type="text" #custName >
+
+In ts file...
+    import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'; // step 1 import the following ref
+    @ViewChild('custName') id: ElementRef<HTMLElement>; //Step2
+    //then use it when even you want....
+    this.id.nativeElement.focus();
