@@ -10,6 +10,7 @@ import { ProductsService } from './products.service';
 import { AppRountingModule } from './app-rounting.module';
 import { PageNotFoundErrorComponent } from './page-not-found-error/page-not-found-error.component';
 import { CustomerComponent } from './customer/customer.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -28,7 +29,8 @@ import { CustomerComponent } from './customer/customer.component';
     AppRountingModule,
   ],
   providers: [
-    ProductsService
+    ProductsService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

@@ -21,6 +21,10 @@ const appRoute: Routes = [
   {
     path: '**',
     component: PageNotFoundErrorComponent
+  },
+  {
+    path: "404",
+    component: PageNotFoundErrorComponent
   }
 ]
 

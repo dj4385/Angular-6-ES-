@@ -17,3 +17,9 @@ Step 3: Go to your IIS server, right click on the Default websites => click on a
 Step 4(otpional): If your application is not live then go to your server => next goto the IIS section and double click on authentication. Select ASP.NET Impersonation and select 'Disable' at the top of the right pane.  
 
 Then your application will be live. Thankyou
+
+========================================================
+Use cookies in the angular 6...
+To install the coookes npm:- npm i ngx-cookie-service --save
+visit the link for how to use cookes:
+    https://www.npmjs.com/package/ngx-cookie-service
