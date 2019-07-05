@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule, Router } from '@angular/router';
 import { OrderComponent } from './order/order.component';
 import { PageNotFoundErrorComponent } from './page-not-found-error/page-not-found-error.component';
