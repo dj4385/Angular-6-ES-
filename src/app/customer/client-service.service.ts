@@ -13,7 +13,7 @@ export class ClientServiceService {
     private URL: ApiUrlsService
   ) { }
 
-  getClient(){
-    return this._httpClient.get(this.clientUrl);
+  getClient(Dbname:any ,SuppName :any){
+    return this._httpClient.post<any>(this.clientUrl,{"Dbname":Dbname,"SuppName":SuppName});
   }
 }

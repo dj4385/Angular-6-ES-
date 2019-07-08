@@ -8,6 +8,6 @@ export class ApiUrlsService {
   constructor() { }
 
   easySolAPI = {
-    CustomerDetail : "http://192.168.1.202/angularAPI/Login.svc/GetUser"
+    CustomerDetail : "http://localhost:52174/Login.svc/GetUser"
   }
 }

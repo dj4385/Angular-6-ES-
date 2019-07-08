@@ -14,7 +14,7 @@ export class CustomerComponent implements OnInit {
   cookieArr = []
   Dbname = ""
   SuppName = ""
-  
+  clientStatus = {}
 
 
   @ViewChild('custName') id: ElementRef<HTMLElement>;
@@ -30,7 +30,6 @@ export class CustomerComponent implements OnInit {
     this.id.nativeElement.focus();
     this.cookieValue = this._cookieService.get('userInfo')
     this.getCookieValues(this.cookieValue)
-    console.log("First Value:",this.cookieArr[0]);
     
     
 
@@ -38,6 +37,7 @@ export class CustomerComponent implements OnInit {
     // this.checkUserDetails();
     // this.getClientDetails();
   }
+
   getCookieValues(cookieData){
     if(cookieData == ""){
       this.Dbname = ""
@@ -45,10 +45,12 @@ export class CustomerComponent implements OnInit {
     } else {
       let cookieDataArr = cookieData.split("&",4);
       let Dname = cookieDataArr[0].toString()
-      let Dbname = Dname.substr(Dname.IndexOf("="), Dname.length);
+      let Dbname = Dname.slice(Dname.indexOf("=") + 1,Dname.length)
       let Sname = cookieDataArr[2].toString()
-      let SuppName = Sname.substr(Sname.IndexOf("="), Sname.length);
-      console.log(Dbname, SuppName);
+      let SuppName = Sname.substr(Sname.indexOf("=") + 1, Sname.length);
+      //calling a function
+      this.getClientDetails(Dbname,SuppName)
+
     }
   }
   // checkUserDetails(){
@@ -59,23 +61,19 @@ export class CustomerComponent implements OnInit {
   //   }
   // }
   
-  client = []
-  
-  // getClientDetails(){
-  //   this._client.getClient()
-  //     .subscribe(
-  //       res => {
-  //         this.client = res;
-  //         console.log("Arr:",this.client, typeof(this.client));
-  //       },
-  //       err => {
-  //         console.log(err);
-  //       }
-  //     )
-  // }
-
-  
-
-
+  getClientDetails(Dbname,SuppName){
+    if(Dbname != "" && SuppName != ""){
+      this._client.getClient(Dbname,SuppName)
+        .subscribe(
+          res => {
+            this.clientStatus = res;
+            console.log(this.clientStatus)
+          },
+          err => {
+            console.log(err)
+          }
+        )
+    }
+  }
 
 }
