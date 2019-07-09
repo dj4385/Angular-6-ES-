@@ -12,7 +12,7 @@ import { PageNotFoundErrorComponent } from './page-not-found-error/page-not-foun
 import { CustomerComponent } from './customer/customer.component';
 import { CookieService } from 'ngx-cookie-service';
 import { ClientServiceService } from './customer/client-service.service';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -28,6 +28,7 @@ import { ClientServiceService } from './customer/client-service.service';
     HttpClientModule,
     FormsModule,
     AppRountingModule,
+    Ng2SearchPipeModule
   ],
   providers: [
     ProductsService,

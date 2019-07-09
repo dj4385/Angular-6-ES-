@@ -18,11 +18,10 @@ export class CustomerComponent implements OnInit {
   uid = ""
   clientStatus :any = {}
   customer :any = []
-
+  custSearch = ""
 
   @ViewChild('custName') id: ElementRef<HTMLElement>;
-
-
+  
   constructor(
     private _cookieService: CookieService,
     private _route: Router,
@@ -34,6 +33,7 @@ export class CustomerComponent implements OnInit {
     this.cookieValue = this._cookieService.get('userInfo')
     this.getCookieValues(this.cookieValue)
     this.customerDetail()
+    
   }
 
   getCookieValues(cookieData){
@@ -90,9 +90,4 @@ export class CustomerComponent implements OnInit {
         }
       )
   }
-
-  // orderComp(){
-  //   this._route.navigate(['/order'],{queryParams: {"customerName": this.customer.customerName}})
-  // }
-
 }

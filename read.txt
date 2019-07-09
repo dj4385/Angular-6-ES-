@@ -53,3 +53,11 @@ Step3: Write the following line of code in Application_BeginRequest function:
         HttpContext.Current.Response.End();
     }
 Step4: Run the wcf service and call through the angular...
+
+=================================================================
+Search in angular (Customer Component) follow the steps of this link
+
+    https://www.npmjs.com/package/ng2-search-filter
+
+=================================================================
+

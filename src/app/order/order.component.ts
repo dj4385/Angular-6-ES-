@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../products.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -8,6 +9,7 @@ import { ProductsService } from '../products.service';
 })
 export class OrderComponent implements OnInit {
 
+  selectedUser = ""
   productArr:any = []
   order = {
     itemName: "",
@@ -21,10 +23,12 @@ export class OrderComponent implements OnInit {
   isClicked = false;
   isReadOnly = true;
   constructor(
-    private _prodService: ProductsService
+    private _prodService: ProductsService,
+    private _activeRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.selectedUser = this._activeRoute.snapshot.queryParamMap.get("custName")
     this.getAllProducts();
   }
 
