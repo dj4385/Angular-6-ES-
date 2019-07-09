@@ -31,19 +31,19 @@
                 <th>View</th>
                 <th>Code</th>
                 <th>Customer Name</th>
+                <th>Email</th>
                 <th>Address</th>
-                <th>Orders</th>
               </tr>
             </thead>
             <tbody class="bg-secondary text-white">
-                <tr >
+                <tr *ngFor="let cust of customer">
                   <td>
-                    <a>Select</a>
+                    <a [routerLink]="[ '/order']" [queryParams]="{ custName: cust.customerName}">Select</a>
                   </td>
-                  <!-- <td> {{ item.code }} </td>
-                  <td> {{ item.custName }} </td>
-                  <td> {{ item.email }}</td>
-                  <td> {{ item.custAddress }} </td> -->
+                  <td> {{ cust.code }} </td>
+                  <td> {{ cust.customerName }} </td>
+                  <td> {{ cust.email }}</td>
+                  <td> {{ cust.address }} </td>
                 </tr>
             </tbody>
           </table>

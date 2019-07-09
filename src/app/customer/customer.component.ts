@@ -17,6 +17,7 @@ export class CustomerComponent implements OnInit {
   userName = ""
   uid = ""
   clientStatus :any = {}
+  customer :any = []
 
 
   @ViewChild('custName') id: ElementRef<HTMLElement>;
@@ -32,6 +33,7 @@ export class CustomerComponent implements OnInit {
     this.id.nativeElement.focus();
     this.cookieValue = this._cookieService.get('userInfo')
     this.getCookieValues(this.cookieValue)
+    this.customerDetail()
   }
 
   getCookieValues(cookieData){
@@ -77,5 +79,19 @@ export class CustomerComponent implements OnInit {
         )
     }
   }
+
+  customerDetail(){
+    this._client.getCustomer()
+      .subscribe(
+        res=> {
+          this.customer = res;
+          console.log(this.customer)
+        }
+      )
+  }
+
+  // orderComp(){
+  //   this._route.navigate(['/order'],{queryParams: {"customerName": this.customer.customerName}})
+  // }
 
 }
