@@ -35,3 +35,21 @@ In ts file...
     @ViewChild('custName') id: ElementRef<HTMLElement>; //Step2
     //then use it when even you want....
     this.id.nativeElement.focus();
+
+
+=================================================================================
+
+How to remove the issue of cors while calling wcf api with angular 6
+
+Step1: In WCF API create a new file Global.asax.
+Step2: Go to the Global.asax.cs then go to in the function : Application_BeginRequest
+Step3: Write the following line of code in Application_BeginRequest function:
+    HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin", "*");
+    if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
+    {
+        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods", "GET, POST");
+        HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
+        HttpContext.Current.Response.AddHeader("Access-Control-Max-Age", "1728000");
+        HttpContext.Current.Response.End();
+    }
+Step4: Run the wcf service and call through the angular...

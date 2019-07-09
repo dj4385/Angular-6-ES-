@@ -70,7 +70,7 @@ export class CustomerComponent implements OnInit {
             console.log(this.clientStatus)
           },
           err => {
-            console.log(err)
+            console.log(err.message)
           }
         )
     }

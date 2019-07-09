@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ApiUrlsService } from '../api/api-urls.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientServiceService {
 
-  clientUrl = this.URL.easySolAPI.CustomerDetail;
+  clientUrl = "http://localhost:52174/Login.svc/GetUser";
   constructor(
-    private _httpClient: HttpClient,
-    private URL: ApiUrlsService
+    private _httpClient: HttpClient
   ) { }
 
   getClient(Dbname:any ,SuppName :any){
