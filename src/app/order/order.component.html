@@ -11,13 +11,17 @@
                                 <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <label for="">Item Name</label> <span class="ml-3 text-danger" *ngIf="itemName.invalid && (itemName.dirty || itemName.touched)">Required Field*</span>
-                                        <input type="text" name="itemName" id="" placeholder="Item Name" autocomplete="off" class="form-control" [(ngModel)]="order.itemName" #itemName = "ngModel" required>
+                                        <!-- <input type="text" name="itemName" id="" placeholder="Item Name" autocomplete="off" class="form-control" [(ngModel)]="order.itemName" #itemName = "ngModel" required> -->
+                                        <select name="productList" id="" placeholder="Select Product" autocomplete="off" class="form-control" [(ngModel)]="order.itemName" #itemName = "ngModel" (click)="itemSelected()" required>
+                                            <option *ngFor="let item of productName" value="{{item}}"> {{item}} </option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-1 col-md-2 col-sm-6 col-xs-6">
                                     <div class="form-group">
-                                        <label for="">Qty</label> <span class="ml-3 text-danger" *ngIf="qty.invalid && (qty.dirty || qty.touched)">Required Field*</span>
+                                        <label for="">Qty</label> 
                                         <input type="number" min="1" max="100000" name="qty" id="" [(ngModel)]="order.qty" placeholder="0" class="form-control" #qty="ngModel" required>
+                                        <span class="ml-3 text-danger" *ngIf="qty.invalid && (qty.dirty || qty.touched)">Required Field*</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-1 col-md-2 col-sm-6 col-xs-6">

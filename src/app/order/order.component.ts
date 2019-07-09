@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../products.service';
 import { ActivatedRoute } from '@angular/router';
+import { ItemSerService } from './item-ser.service';
 
 @Component({
   selector: 'app-order',
@@ -10,7 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class OrderComponent implements OnInit {
 
   selectedUser = ""
-  productArr:any = []
+  productList:any = []
+  productName: any = []
   order = {
     itemName: "",
     qty:"",
@@ -23,7 +24,7 @@ export class OrderComponent implements OnInit {
   isClicked = false;
   isReadOnly = true;
   constructor(
-    private _prodService: ProductsService,
+    private _prodService: ItemSerService,
     private _activeRoute: ActivatedRoute
   ) { }
 
@@ -33,15 +34,30 @@ export class OrderComponent implements OnInit {
   }
 
   getAllProducts(){
-    this._prodService.getProducts().subscribe(
+    this._prodService.getAllItems().subscribe(
       res => {
-        this.productArr = res;
-        alert("All products details gets");
+        this.productList = res;
+        this.productList.forEach(element => {
+          this.productName.push(element.name)
+        });
+        console.log(this.productList)
       },
       err => {
         console.log(err);
       }
     )
+  }
+
+  itemSelected(){
+    this.productList.filter(ele=>{
+      if(this.order.itemName.toLowerCase() == ele.name.toLowerCase()){
+        this.order.balQty = ele.clQty
+        this.order.mrp = ele.mrp
+        this.order.pack = ele.pack
+        this.order.rate = ele.rate
+        this.order.scheme = ele.scheme
+      }
+    })
   }
 
   createOrder(){
