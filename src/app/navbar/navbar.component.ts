@@ -8,14 +8,17 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  userName = ""
   constructor(
     private _router: Router
   ) { }
 
   ngOnInit() {
+    this.userName = localStorage.getItem("username")
   }
 
   logout(){
+    localStorage.clear();
     this._router.navigate(['login']);
   }
 

@@ -14,7 +14,9 @@ export class CustomerComponent implements OnInit {
   cookieArr = []
   Dbname = ""
   SuppName = ""
-  clientStatus = {}
+  userName = ""
+  uid = ""
+  clientStatus :any = {}
 
 
   @ViewChild('custName') id: ElementRef<HTMLElement>;
@@ -30,47 +32,47 @@ export class CustomerComponent implements OnInit {
     this.id.nativeElement.focus();
     this.cookieValue = this._cookieService.get('userInfo')
     this.getCookieValues(this.cookieValue)
-    
-    
-
-    // console.log("Cookie value",this.cookieValue)
-    // this.checkUserDetails();
-    // this.getClientDetails();
   }
 
   getCookieValues(cookieData){
     if(cookieData == ""){
       this.Dbname = ""
       this.SuppName = ""
+      this.uid = ""
+      this.userName = ""
     } else {
       let cookieDataArr = cookieData.split("&",4);
       let Dname = cookieDataArr[0].toString()
       let Dbname = Dname.slice(Dname.indexOf("=") + 1,Dname.length)
+      let uid = cookieDataArr[1].toString()
+      let UID = uid.substr(uid.indexOf("=") + 1, uid.length);
       let Sname = cookieDataArr[2].toString()
       let SuppName = Sname.substr(Sname.indexOf("=") + 1, Sname.length);
+      let uname = cookieDataArr[3].toString()
+      let userName = uname.substr(uname.indexOf("=") + 1, uname.length);
       //calling a function
-      this.getClientDetails(Dbname,SuppName)
+      this.getUserDetails(Dbname,SuppName,UID,userName)
 
     }
   }
-  // checkUserDetails(){
-  //   if(this.cookieValue === ""){
-  //     this._route.navigate(['/404']);
-  //   } else {
-  //     this._route.navigate(['/customer']);
-  //   }
-  // }
   
-  getClientDetails(Dbname,SuppName){
-    if(Dbname != "" && SuppName != ""){
-      this._client.getClient(Dbname,SuppName)
+  getUserDetails(Dbname,SuppName,UID,username){
+    if(Dbname != "" && SuppName != "" && UID != "" && username != ""){
+      this._client.getUser(Dbname,SuppName)
         .subscribe(
           res => {
             this.clientStatus = res;
-            console.log(this.clientStatus)
+            if(this.clientStatus.GetUserResult != ""){
+              localStorage.setItem("AccessToken", this.clientStatus.GetUserResult)
+              localStorage.setItem("username",username)
+              localStorage.setItem("uid",UID)
+              this._route.navigate(['/customer']);
+            } else {
+              this._route.navigate(['/404']);
+            }
           },
           err => {
-            console.log(err.message)
+            alert(err.message)
           }
         )
     }

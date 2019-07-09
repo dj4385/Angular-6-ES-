@@ -12,7 +12,7 @@ export class ClientServiceService {
     private _httpClient: HttpClient
   ) { }
 
-  getClient(Dbname:any ,SuppName :any){
+  getUser(Dbname:any ,SuppName :any){
     return this._httpClient.post<any>(this.clientUrl,{"Dbname":Dbname,"SuppName":SuppName});
   }
 }
