@@ -35,7 +35,7 @@
                 <th>Address</th>
               </tr>
             </thead>
-            <tbody class="bg-secondary text-white">
+            <tbody class="bg-white text-dark">
                 <tr *ngFor="let cust of customer">
                   <td>
                     <a [routerLink]="[ '/order']" [queryParams]="{ custName: cust.customerName}">Select</a>

@@ -42,6 +42,7 @@ export class CustomerComponent implements OnInit {
       this.SuppName = ""
       this.uid = ""
       this.userName = ""
+      this._route.navigate(['/404'])
     } else {
       let cookieDataArr = cookieData.split("&",4);
       let Dname = cookieDataArr[0].toString()
