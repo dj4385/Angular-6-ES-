@@ -7,6 +7,12 @@
           <div class="panel-body">
                 <div class="card-body">
                         <form #orderform="ngForm">
+                            <div class="row text-center" *ngIf="isQty === true">
+                                <div class="alert alert-danger alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <strong>Error!</strong> 
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
@@ -16,26 +22,26 @@
                                         <!-- <select name="productList" id="" placeholder="Select Product" autocomplete="off" class="form-control" [(ngModel)]="order.itemName" #itemName = "ngModel" (click)="itemSelected()" required>
                                             <option *ngFor="let item of productName" value="{{item}}"> {{item}} </option>
                                         </select> -->
-                                        <ngx-select-dropdown (change)="selectionChanged($event)" name="itemName" id="itemName" [config]="config" [options]="productList" autocomplete="off" class="form-control" [(ngModel)]="order.itemName" style="padding: 0 0 !important;"></ngx-select-dropdown>
+                                        <ngx-select-dropdown (change)="selectionChanged($event)" name="itemName" id="itemName" [config]="config" [options]="productList" autocomplete="off" class="form-control" [(ngModel)]="itemName" style="padding: 0 0 !important;" required></ngx-select-dropdown>
                                     </div>
                                 </div>
                                 <div class="col-lg-1 col-md-2 col-sm-6 col-xs-6">
                                     <div class="form-group">
                                         <label for="">Qty</label> 
-                                        <input type="number" min="1" max="100000" name="qty" id="" [(ngModel)]="order.qty" placeholder="0" class="form-control" #qty="ngModel" required>
-                                        <span class="ml-3 text-danger" *ngIf="qty.invalid && (qty.dirty || qty.touched)">Required Field*</span>
+                                        <input type="number" min="1" max="100000" name="_qty" id="" [(ngModel)]="qty" (input)="checkQty($event.target.value)" placeholder="0" class="form-control" #_qty="ngModel" required>
+                                        <span class="text-danger" *ngIf="_qty.invalid && (_qty.dirty || _qty.touched)">Required Field*</span>
                                     </div>
                                 </div>
                                 <div class="col-lg-1 col-md-2 col-sm-6 col-xs-6">
                                     <div class="form-group">
                                         <label for="">Bal. Qty</label>
-                                        <input type="text" name="balQty" id="" [(ngModel)]="order.balQty" placeholder="0" class="form-control"  readonly>
+                                        <input type="text" name="balQty" id="" [(ngModel)]="balQty" placeholder="0" class="form-control"  readonly>
                                     </div>
                                 </div>
                                 <div class="col-lg-1 col-md-2 col-sm-2 col-xs-6">
                                     <div class="form-group">
                                         <label for="">Pack</label>
-                                        <input type="text" name="pack" id="" [(ngModel)]="order.pack" placeholder="Pack" class="form-control" readonly>
+                                        <input type="text" name="pack" id="" [(ngModel)]="pack" placeholder="Pack" class="form-control" readonly>
                                     </div>
                                 </div>
                             <!-- </div>
@@ -43,29 +49,29 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                                     <div class="form-group">
                                         <label for="">Scheme</label>
-                                        <input type="text" name="scheme" id="" [(ngModel)]="order.scheme" placeholder="Scheme" class="form-control" readonly>
+                                        <input type="text" name="scheme" id="" [(ngModel)]="scheme" placeholder="Scheme" class="form-control" readonly>
                                     </div>
                                 </div>
                                 <div class="col-lg-1 col-md-2 col-sm-2 col-xs-6">
                                     <div class="form-group">
                                         <label for="">MRP</label>
-                                        <input type="text" name="mrp" id="" [(ngModel)]="order.mrp" placeholder="MRP" class="form-control" readonly>
+                                        <input type="text" name="mrp" id="" [(ngModel)]="mrp" placeholder="MRP" class="form-control" readonly>
                                     </div>
                                 </div>
                                 <div class="col-lg-1 col-md-2 col-sm-2 col-xs-6">
                                     <div class="form-group">
                                         <label for="">Rate</label>
-                                        <input type="text" name="rate" id="" [(ngModel)]="order.rate" placeholder="Rate" class="form-control" readonly>
+                                        <input type="text" name="Rate" id="" [(ngModel)]="rate" placeholder="Rate" class="form-control" readonly>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <label class="mr-2 mt-3">Total Price : </label> <span><i class="fa fa-rupee"></i>  </span>
+                                    <label class="mr-2 mt-3">Total Price : </label> <span><i class="fa fa-rupee"></i> {{ totalAmt }}  </span>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group mt-3 pull-right">
-                                        <button class="btn btn-primary btn-sm mr-2" [disabled]="orderform.invalid" (click)="createOrder()"> <i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+                                        <button class="btn btn-primary btn-sm mr-2" [disabled]="orderform.invalid || checkAll === true" (click)="createOrder()"> <i class="fa fa-plus" aria-hidden="true"></i> Add</button>
                                         <button class="btn btn-danger btn-sm" (click)="reset()"> <i class="fa fa-recycle" aria-hidden="true"></i> Reset</button>
                                     </div>
                                 </div>
@@ -94,7 +100,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr *ngFor="let selItem of selectedItems">
+                        
                         <td>
                             <i class="fa fa-pencil text-primary" aria-hidden="true" (click)="editRow()" *ngIf="isClicked == false"></i>
                             <i class="fa fa-times" *ngIf="isClicked == true" (click)="cancelEdit()"></i>
@@ -104,15 +111,15 @@
                         </td>
                         <td>
                             <!-- <div> -->
-                                <input type="number" min="1" max="100000" name="" id="updateQty" class="qtytxt" [readonly]="isReadOnly">
+                                <input type="number" min="1" max="100000" name="" id="updateQty" class="qtytxt" [(ngModel)]="selItem.qty" [readonly]="isReadOnly">
                             <!-- </div> -->
                         </td>
-                        <td>Item Name</td>
-                        <td>PacK</td>
-                        <td>Scheme</td>
-                        <td>MRP</td>
-                        <td>Rate</td>
-                        <td>Amount</td>
+                        <td> {{ selItem.itemName }} </td>
+                        <td> {{ selItem.pack }} </td>
+                        <td> {{ selItem.scheme }} </td>
+                        <td> {{ selItem.mrp }} </td>
+                        <td> {{ selItem.rate }} </td>
+                        <td> {{ selItem.totalPrice }} </td>
                     </tr>
                 </tbody>
               </table>
