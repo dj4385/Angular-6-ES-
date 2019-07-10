@@ -28,3 +28,6 @@ label{
 .qtytxt{
     width: 50px;
 }
+.ngx-dropdown-container[_ngcontent-c3] .ngx-dropdown-button[_ngcontent-c3] {
+    padding: 0px 10px 5px 10px !important;
+}

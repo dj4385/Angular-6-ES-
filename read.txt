@@ -61,3 +61,10 @@ Search in angular (Customer Component) follow the steps of this link
 
 =================================================================
 
+Dropdown seachable in angular 6..by using ngx-select-dropdown
+
+Follow the steps of the link https://www.npmjs.com/package/ngx-select-dropdown
+
+Note: a) In the custom tag option attribute put the name of array  which have keys..
+b) In config file display key enter key which you want to display
+=======================================================================

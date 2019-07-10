@@ -10,11 +10,13 @@
                             <div class="row">
                                 <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <label for="">Item Name</label> <span class="ml-3 text-danger" *ngIf="itemName.invalid && (itemName.dirty || itemName.touched)">Required Field*</span>
+                                        <label for="">Item Name</label>
+                                        <!-- <span class="ml-3 text-danger" *ngIf="itemName.invalid && (itemName.dirty || itemName.touched)">Required Field*</span> -->
                                         <!-- <input type="text" name="itemName" id="" placeholder="Item Name" autocomplete="off" class="form-control" [(ngModel)]="order.itemName" #itemName = "ngModel" required> -->
-                                        <select name="productList" id="" placeholder="Select Product" autocomplete="off" class="form-control" [(ngModel)]="order.itemName" #itemName = "ngModel" (click)="itemSelected()" required>
+                                        <!-- <select name="productList" id="" placeholder="Select Product" autocomplete="off" class="form-control" [(ngModel)]="order.itemName" #itemName = "ngModel" (click)="itemSelected()" required>
                                             <option *ngFor="let item of productName" value="{{item}}"> {{item}} </option>
-                                        </select>
+                                        </select> -->
+                                        <ngx-select-dropdown (change)="selectionChanged($event)" name="itemName" id="itemName" [config]="config" [options]="productList" autocomplete="off" class="form-control" [(ngModel)]="order.itemName" style="padding: 0 0 !important;"></ngx-select-dropdown>
                                     </div>
                                 </div>
                                 <div class="col-lg-1 col-md-2 col-sm-6 col-xs-6">

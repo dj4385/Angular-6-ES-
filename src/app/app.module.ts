@@ -13,7 +13,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ClientServiceService } from './customer/client-service.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ItemSerService } from './order/item-ser.service';
-
+import { SelectDropDownModule } from 'ngx-select-dropdown'
 
 @NgModule({
   declarations: [
@@ -28,7 +28,9 @@ import { ItemSerService } from './order/item-ser.service';
     HttpClientModule,
     FormsModule,
     AppRountingModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    SelectDropDownModule
+    
   ],
   providers: [
     ItemSerService,

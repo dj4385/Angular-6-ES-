@@ -23,6 +23,13 @@ export class OrderComponent implements OnInit {
   }
   isClicked = false;
   isReadOnly = true;
+
+  config = {
+    displayKey:"name", //if objects array passed which key to be displayed defaults to description
+    search:true, //true/false for the search functionlity defaults to false,
+    placeholder:'Select', // text to be displayed when no item is selected defaults to Select,
+    height: '200px'
+  }
   constructor(
     private _prodService: ItemSerService,
     private _activeRoute: ActivatedRoute
@@ -48,9 +55,9 @@ export class OrderComponent implements OnInit {
     )
   }
 
-  itemSelected(){
+  selectionChanged(data){
     this.productList.filter(ele=>{
-      if(this.order.itemName.toLowerCase() == ele.name.toLowerCase()){
+      if(data.toLowerCase() == ele.name.toLowerCase()){
         this.order.balQty = ele.clQty
         this.order.mrp = ele.mrp
         this.order.pack = ele.pack
