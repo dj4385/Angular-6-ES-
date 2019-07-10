@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ItemSerService } from './item-ser.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-order',
@@ -27,6 +28,7 @@ export class OrderComponent implements OnInit {
   checkAll = false;
   selectedItemObj : any = {}
   selectedItems : any = []
+  responseMsg : any = []
 
   config = {
     displayKey:"name", //if objects array passed which key to be displayed defaults to description
@@ -136,5 +138,14 @@ export class OrderComponent implements OnInit {
   cancelEdit(){
     this.isClicked = false;
     this.isReadOnly = true;
+  }
+  deleteItem(_code){
+    this._prodService.deleteSelectedItem(_code).subscribe(
+      res=>{
+        this.responseMsg = res;
+        this._getSelectedItemList();
+        console.log(this.responseMsg)
+      }
+    )
   }
 }
