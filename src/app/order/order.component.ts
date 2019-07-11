@@ -140,12 +140,14 @@ export class OrderComponent implements OnInit {
     this.isReadOnly = true;
   }
   deleteItem(_code){
-    this._prodService.deleteSelectedItem(_code).subscribe(
-      res=>{
-        this.responseMsg = res;
-        this._getSelectedItemList();
-        console.log(this.responseMsg)
-      }
-    )
+    if(confirm("Are You Sure ?"+_code)){
+      this._prodService.deleteSelectedItem(_code).subscribe(
+        res=>{
+          this.responseMsg = res;
+          this._getSelectedItemList();
+          console.log(this.responseMsg)
+        }
+      )
+    }
   }
 }
