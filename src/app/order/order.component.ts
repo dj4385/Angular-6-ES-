@@ -10,6 +10,9 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class OrderComponent implements OnInit {
 
+  totalPrice : any = "" 
+  userName = ""
+  code = ""
   selectedUser = ""
   totalAmt : number = 0
   productList:any = []
@@ -29,6 +32,8 @@ export class OrderComponent implements OnInit {
   selectedItemObj : any = {}
   selectedItems : any = []
   responseMsg : any = []
+  totalAmount = []
+  selectedItemArr : any = []
 
   config = {
     displayKey:"name", //if objects array passed which key to be displayed defaults to description
@@ -90,10 +95,6 @@ export class OrderComponent implements OnInit {
     }
   }
 
-  totalPrice : any = "" 
-  userName = ""
-  code = ""
-
   createOrder(){
     this.totalPrice =parseInt(this.qty) * parseInt(this.rate) 
     this.totalPrice = String(this.totalPrice)
@@ -111,8 +112,7 @@ export class OrderComponent implements OnInit {
         }
       )
   }
-  totalAmount = []
-  selectedItemArr : any = []
+  
   _getSelectedItemList(userName){
     this._prodService.getSelectedItemList(userName)
       .subscribe(
