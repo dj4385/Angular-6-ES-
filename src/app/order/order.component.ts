@@ -44,7 +44,7 @@ export class OrderComponent implements OnInit {
   ngOnInit() {
     this.selectedUser = this._activeRoute.snapshot.queryParamMap.get("custName")
     this.getAllProducts();
-    this._getSelectedItemList()
+    this._getSelectedItemList(this.selectedUser)
   }
 
   getAllProducts(){
@@ -102,20 +102,31 @@ export class OrderComponent implements OnInit {
       .subscribe(
         res=>{
           this.reset();
-          this._getSelectedItemList()
+          this._getSelectedItemList(this.userName)
         },
         err=>{
           console.log(err)
         }
       )
   }
-  _getSelectedItemList(){
-    this._prodService.getSelectedItemList()
+  totalAmount = []
+  selectedItemArr : any = []
+  _getSelectedItemList(userName){
+    this._prodService.getSelectedItemList(userName)
       .subscribe(
         res=> {
           this.selectedItems = res
+          this.selectedItemArr = this.selectedItems
+          this.selectedItemArr.forEach(ele=>{
+            if(ele.length){
+              this.totalAmount.push(ele.totalPrice)
+              // console.log(this.totalAmount)
+            }
+
+          })
+
           // this.selectedItems = this.selectedItemObj.storeSelectedItemsResult;
-          console.log("Selected Item",this.selectedItems)
+          console.log("Selected Item",this.totalAmount)
         }
       )
   }
@@ -144,7 +155,7 @@ export class OrderComponent implements OnInit {
       this._prodService.deleteSelectedItem(_code).subscribe(
         res=>{
           this.responseMsg = res;
-          this._getSelectedItemList();
+          this._getSelectedItemList(this.selectedUser);
           console.log(this.responseMsg)
         }
       )
