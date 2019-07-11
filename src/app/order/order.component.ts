@@ -34,6 +34,7 @@ export class OrderComponent implements OnInit {
   responseMsg : any = []
   totalAmount = []
   selectedItemArr : any = []
+  msg = ""
 
   config = {
     displayKey:"name", //if objects array passed which key to be displayed defaults to description
@@ -76,7 +77,7 @@ export class OrderComponent implements OnInit {
       }
     })
   }
-  msg = ""
+ 
   checkQty(qty){
     if(qty == 0){
       this.isQty = true
@@ -131,11 +132,7 @@ export class OrderComponent implements OnInit {
         },
         err=>{
           console.log(err)
-        })
-          
-
-          // this.selectedItems = this.selectedItemObj.storeSelectedItemsResult
-        
+        })      
   }
   reset(){
     // this.order = {
