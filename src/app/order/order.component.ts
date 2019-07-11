@@ -11,7 +11,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class OrderComponent implements OnInit {
 
   selectedUser = ""
-  totalAmt = ""
+  totalAmt : number = 0
   productList:any = []
   // order :any = {
     itemName = ""
@@ -118,17 +118,22 @@ export class OrderComponent implements OnInit {
           this.selectedItems = res
           this.selectedItemArr = this.selectedItems
           this.selectedItemArr.forEach(ele=>{
-            if(ele.length){
-              this.totalAmount.push(ele.totalPrice)
-              // console.log(this.totalAmount)
-            }
-
+            this.totalAmount.push(parseInt(ele.totalPrice))
           })
+          let acc = this.totalAmount.reduce((acc,el)=>{
+            acc += el
+            return acc
+          })
+          this.totalAmt = acc
+          this.totalAmount = []
+        },
+        err=>{
+          console.log(err)
+        })
+          
 
-          // this.selectedItems = this.selectedItemObj.storeSelectedItemsResult;
-          console.log("Selected Item",this.totalAmount)
-        }
-      )
+          // this.selectedItems = this.selectedItemObj.storeSelectedItemsResult
+        
   }
   reset(){
     // this.order = {
