@@ -71,14 +71,16 @@ export class OrderComponent implements OnInit {
       }
     })
   }
-
+  msg = ""
   checkQty(qty){
     if(qty == 0){
       this.isQty = true
       this.checkAll = true
+      this.msg = "Quantity cannot be 0"
     } else if(parseInt(qty) > parseInt(this.balQty)) {
       this.isQty = true;
       this.checkAll = true;
+      this.msg = "Quantity cannot be greater than Balance Quantity"
     } else {
       this.isQty = false
       this.checkAll = false
